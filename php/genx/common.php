@@ -199,7 +199,7 @@ function dh_replace_content($count,$row,$DH_output_content)
 	{		
 		if($simgurl=='')
 			continue;
-		$replacediv .= '<imgdao style="margin:5px" link_src="http://movie.douban.com/photos/photo/'.$simgurl.'/" img_src="http://img3.douban.com/view/photo/albumicon/public/p'.$simgurl.'.jpg" style="width:100px;height:100px" src_width="100px" src_height="100px" alt="'.$row['title'].'的剧照"><span></span></imgdao>';
+		$replacediv .= '<imgdao style="margin:5px" link_src="http://movie.douban.com/photos/photo/'.$simgurl.'/" img_src="http://img3.doubanio.com/view/photo/albumicon/public/p'.$simgurl.'.jpg" style="width:100px;height:100px" src_width="100px" src_height="100px" alt="'.$row['title'].'的剧照"><span></span></imgdao>';
 	}	
 	$DH_output_content_page = str_replace("%simgs%",$replacediv,$DH_output_content);
 	
@@ -578,11 +578,11 @@ function getlinksmore($searchcat,$linktop,$num0,$num,$id,$content,$innerpage)
 	}
     else if($num0==0)
     {
-	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
+	    $tmplinks = '<div class="listall" style="text-align:center;padding:3px 0 1px 0">暂无此类资源，本站会及时更新最新资源，请试试 <a href="http://s.yingsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
     }
     else
     {
-        $tmplinks.= '<div class="listall" style="text-align:center;padding:3px 0 1px 0">如果本站没有及时更新最新资源，请试试 <a href="http://s.yfsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
+        $tmplinks.= '<div class="listall" style="text-align:center;padding:3px 0 1px 0">如果本站没有及时更新最新资源，请试试 <a href="http://s.yingsoso.com/s.php?q=%codetitle%&%cat%" target="_blank">影粉搜搜</a></div>';	
     }
     //替换各个搜搜类别
 	$tmplinks = str_replace("%cat%",$searchcat,$tmplinks);
