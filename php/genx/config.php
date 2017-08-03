@@ -1,10 +1,10 @@
 <?php
 
-$DH_output_path= '/srv/x/';
-$DH_input_path= '/srv/php/';
+$DH_output_path= '/web/x/';
+$DH_input_path= '/web/php/';
 $DH_home_url= 'http://v.x2y4.com/';
-$DH_search_input_path="/srv/php/share/";
-$DH_search_output_path="/srv/s/";
+$DH_search_input_path="/web/php/share/";
+$DH_search_output_path="/web/s/";
 
 //$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x/';
 //$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
