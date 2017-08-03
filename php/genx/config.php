@@ -1,6 +1,6 @@
 <?php
 
-$DH_output_path= '/web/x/';
+$DH_output_path= '/web/x2y4/';
 $DH_input_path= '/web/php/';
 $DH_home_url= 'http://v.x2y4.com/';
 $DH_search_input_path="/web/php/share/";
