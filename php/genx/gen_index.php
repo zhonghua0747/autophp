@@ -51,7 +51,7 @@ function dh_gen_index()
 	$topnews.="，在线下载".dh_mysql_get_count("select count(*) from link  where linkway=6 or linkway=7")."个";
 	$topnews.="，资讯影评".dh_mysql_get_count("select count(*) from link where linkway=1 or linkway=2")."条）";
 	
-	$topnews.=" <a href=\"http://www.movie002.com/update.html\">今日资源更新>></a>";
+	$topnews.=" <a href=\"http://v.x2y4.com/update.html\">今日资源更新>></a>";
 	
 	$DH_output_content = str_replace("%topnews%",$topnews,$DH_output_content);
 	$DH_index_cats = dh_get_index_cats();	
