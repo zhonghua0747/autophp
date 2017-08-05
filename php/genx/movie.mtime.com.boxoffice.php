@@ -77,7 +77,6 @@ function readerdirect()
 		
 		dh_file_put_contents($DH_input_path.'top/'.$key2.'.top',$outputPlace);		
 	}
-	readrssfile($buff);		
 }
 
 function get_movie_url($title)
