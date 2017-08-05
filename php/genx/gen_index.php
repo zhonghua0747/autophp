@@ -117,15 +117,14 @@ function dh_gen_top($DH_index_cat,$DH_index_cat_each)
 	$liouttitle ="\n<div class=\"TabTitle\"> \n <ul id=\"myTabt\">";
 	$liouttitle .="\n".'<li class="active" onclick="nTabs(this,0);">大陆票房</li>';	
 	$liouttitle .="\n".'<li class="normal" onclick="nTabs(this,1);">欧美票房</li>';		
-	$liouttitle .="\n".'<li class="normal" onclick="nTabs(this,2);">香港票房</li>';	
-	$liouttitle .="\n".'<li class="normal" onclick="nTabs(this,3);">台湾票房</li>';	
+	$liouttitle .="\n".'<li class="normal" onclick="nTabs(this,2);">全球票房</li>';	
 	$liouttitle .="\n</ul>\n</div>";
 
 	$DH_index_cat_each_ins = str_replace("%cat_each_title%",$liouttitle,$DH_index_cat_each);
 	$DH_index_cat_each_ins = str_replace("%cat_each_title_more%",'',$DH_index_cat_each_ins);
 	$DH_index_cat_each_ins = str_replace("%cat_each_title_url%",'#',$DH_index_cat_each_ins);
 	
-	$toparray= array(1,0,2,3);
+	$toparray= array(1,0,2);
 	$liouteachs='';
 	foreach($toparray as $topkey=>$top_index)			
 	{
