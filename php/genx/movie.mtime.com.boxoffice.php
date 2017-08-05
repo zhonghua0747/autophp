@@ -27,13 +27,11 @@ class boxoffice
 
 function readerdirect()
 {
-	$url = array('http://movie.mtime.com/boxoffice/#CN/daily',
+	$url = array('http://movie.mtime.com/boxoffice/#world/weekend',
 			'http://movie.mtime.com/boxoffice/#US/weekend',
-			'http://movie.mtime.com/boxoffice/#world/weekend');
-
-	$urlcat= array('大陆票房','北美票房','全球票房');			
+			'http://movie.mtime.com/boxoffice/#CN/daily');		
 				
-	print_r($url);
+	//print_r($url);
 	echo "开始获取票房纪录:</br>\n";
 	foreach ($url as $key=>$eachurl)
 	{
@@ -43,9 +41,9 @@ function readerdirect()
 		if(!$buff)
 			continue;
 		preg_match_all("/<h3><a href=\"http:\/\/movie.mtime.com\/([0-9-]+)\" target=\"\_blank\">(.*?)<\/a><\/h3>/s",$buff,$match1);
-		print_r($match1);
+		//print_r($match1);
 		preg_match_all("/<p class=\"totalnum\"><strong>(.*?)<\/strong>(.*?)<\/p>/s",$buff,$match2);
-		print_r($match2);
+		//print_r($match2);
 		
 		$outputPlace = "<ol class=\"list20px bbli1 bc_f\">\n"; 
 		$outputPlace .= "\t<li><span class=\"list\">排名</span><span class=\"name\">片名</span><span class=\"week\">周末票房</span><span class=\"allaum\">累计票房</span>\t</li>\n"; 		
