@@ -51,6 +51,10 @@ function readerdirect()
 		$outputPlace .= "\t<li><span class=\"list\">排名</span><span class=\"name\">片名</span><span class=\"week\">周末票房</span><span class=\"allaum\">累计票房</span>\t</li>\n"; 		
 		foreach ($match1[2] as $key2=>$eachmovie)
 		{
+			if($key2>=7)
+			{
+				continue;
+			}
 			$outputPlace .= "\t<li>";
 			$boxofficeeach = new boxoffice();
 			$boxofficeeach->title = $eachmovie;
@@ -75,7 +79,7 @@ function readerdirect()
 			mkdir($DH_input_path.'top/',0777);
 		}
 		
-		dh_file_put_contents($DH_input_path.'top/'.$key2.'.top',$outputPlace);		
+		dh_file_put_contents($DH_input_path.'top/'.$key.'.top',$outputPlace);		
 	}
 }
 
