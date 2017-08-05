@@ -60,7 +60,7 @@ function readerdirect()
 			$boxofficeeach->title = $eachmovie;
 			//找出对于的 title
 			$link = get_movie_url($boxofficeeach->title);
-					
+			$boxofficeeach->link = $link;		
 			$boxofficeeach->weekmoney = $match2[1][$key2*2].$match2[2][$key2*2];						
 			$boxofficeeach->allmoney = $match2[1][$key2*2+1].$match2[2][$key2*2+1];
 			print_r($boxofficeeach);
