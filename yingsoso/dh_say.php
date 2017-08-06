@@ -110,7 +110,7 @@ function dh_say()
 	global $dh_say_content;
 	//print_r($dh_say_content);
 	$thiscontent = $dh_say_content[ mt_rand(0, count($dh_say_content) - 1) ];
-	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;">新增<a href="http://s.yfsoso.com" target="_blank">影粉搜搜</a>、<a href="http://v.x2y4.com" target="_blank">小二影视</a>和<a href="http://yingmi123.com" target="_blank">影迷导航</a>,丰富影视服务！(20150408)</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
+	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;">更新域名为<a href="http://v.x2y4.com" target="_blank">小二影视(x2y4.com)</a>专业域名，专业服务！(20170801)</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
 	return $ret;
 }
 ?>
