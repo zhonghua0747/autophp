@@ -19,16 +19,16 @@ dh_mysql_query("set names utf8;");
 $day=date("w");
 //echo 'w:  '.$day;
 
-if( isset($_REQUEST['d']))
-{
-	$day=$_REQUEST['d'];
-}
-
-if(!($day==4 || $day==0))
-{
-	echo "不做任何动作，退出!</br>\n";
-	return;
-}
+//if( isset($_REQUEST['d']))
+//{
+//	$day=$_REQUEST['d'];
+//}
+//
+//if(!($day==4 || $day==0))
+//{
+//	echo "不做任何动作，退出!</br>\n";
+//	return;
+//}
 						
 nowplaying();
 coming();
@@ -42,15 +42,15 @@ function nowplaying()
 		echo "抓取失败 error! </br>\n";
 		return;
 	}
-	//echo $buffer;	
+//	echo $buffer;	
+//	preg_match_all('/<li class="poster">[\s]+<a href="http:\/\/movie\.douban\.com\/subject\/(.*?)\/\?from=.*?"[^<]+<img src="(.*?)\.jpg" alt="(.*?)".*?\/>[\s]+<\/a>.*?<\/li>/s',$buffer,$match);
+	preg_match_all('/<li[\s]+id="([0-9]+)"[\s]+class="list-item"[\s]+data-title="(.*?)"/s',$buffer,$match);
 	
-	preg_match_all('/<li class="poster">[\s]+<a href="http:\/\/movie\.douban\.com\/subject\/(.*?)\/\?from=.*?"[^<]+<img src="(.*?)\.jpg" alt="(.*?)".*?\/>[\s]+<\/a>.*?<\/li>/s',$buffer,$match);
-	//print_r($match);
-	
-	if(!empty($match[1][0]))
+//	print_r($match);
+	if(!empty($match[1]))
 	{
 		$sql="update page set mstatus=0 where mstatus=3;";
-		dh_mysql_query($sql);	
+		dh_mysql_query($sql);
 		foreach($match[1] as $key=>$eachresult)
 		{
 			$sql="update page set mstatus=3 where mediaid='".$match[1][$key]."'";
@@ -87,7 +87,7 @@ function nowplaying()
 				echo "无记录:";							
 			}
 			$result->imgurl = getimgurl($match[2][$key]);
-			print_r($result);			
+			print_r($result);
 			updatepage2($result,3);
 			getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
 		}	
@@ -104,9 +104,9 @@ function coming()
 	}
 	//echo $buffer;
 	
-	preg_match_all('/subject\/([0-9]+)\/" class="">(.*?)<\/a>/s',$buffer,$match);	
-	//print_r($match);
-
+//	preg_match_all('/subject\/([0-9]+)\/" class="">(.*?)<\/a>/s',$buffer,$match);	
+	preg_match_all('/<td>[\s]+<a href="https:\/\/movie.douban.com\/subject\/([0-9]+)\/" class="">(.*?)<\/a>[\s]+<\/td>/s',$buffer,$match);
+//	print_r($match);
 	if(!empty($match[1][0]))
 	{
 		$sql="update page set mstatus=0 where mstatus=2;";
