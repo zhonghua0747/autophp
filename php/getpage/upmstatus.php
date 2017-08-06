@@ -31,6 +31,7 @@ $day=date("w");
 //}
 						
 nowplaying();
+return;
 coming();
 
 //处理电影名  
@@ -45,8 +46,12 @@ function nowplaying()
 //	echo $buffer;	
 //	preg_match_all('/<li class="poster">[\s]+<a href="http:\/\/movie\.douban\.com\/subject\/(.*?)\/\?from=.*?"[^<]+<img src="(.*?)\.jpg" alt="(.*?)".*?\/>[\s]+<\/a>.*?<\/li>/s',$buffer,$match);
 	preg_match_all('/<li[\s]+id="([0-9]+)"[\s]+class="list-item"[\s]+data-title="(.*?)"/s',$buffer,$match);
+	preg_match_all('/<img src="(.*?)\.webp"/s',$buffer,$match1);
 	
-//	print_r($match);
+	print_r($match);
+	print_r($match1);
+	
+	return;
 	if(!empty($match[1]))
 	{
 		$sql="update page set mstatus=0 where mstatus=3;";
@@ -78,7 +83,7 @@ function nowplaying()
 				$result->pubdate = $row['pubdate'];
 				$result->country = $row['catcountry'];
 				$result->summary = $row['summary'];	
-				$result->title = $match[3][$key];
+				$result->title = $match[2][$key];
 				$result->imgurl = getimgurl($match[2][$key]);			
 				getdetail($result);		
 			}
@@ -88,6 +93,7 @@ function nowplaying()
 			}
 			$result->imgurl = getimgurl($match[2][$key]);
 			print_r($result);
+			return;
 			updatepage2($result,3);
 			getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
 		}	
