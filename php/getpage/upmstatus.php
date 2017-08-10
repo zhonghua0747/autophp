@@ -31,7 +31,6 @@ $day=date("w");
 //}
 						
 nowplaying();
-return;
 coming();
 
 //处理电影名  
@@ -44,14 +43,16 @@ function nowplaying()
 		return;
 	}
 //	echo $buffer;	
-//	preg_match_all('/<li class="poster">[\s]+<a href="http:\/\/movie\.douban\.com\/subject\/(.*?)\/\?from=.*?"[^<]+<img src="(.*?)\.jpg" alt="(.*?)".*?\/>[\s]+<\/a>.*?<\/li>/s',$buffer,$match);
-	preg_match_all('/<li[\s]+id="([0-9]+)"[\s]+class="list-item"[\s]+data-title="(.*?)"/s',$buffer,$match);
-	preg_match_all('/<img src="(.*?)\.webp"/s',$buffer,$match1);
+	preg_match_all('/<li class="poster">[\s]+<a href="https:\/\/movie\.douban\.com\/subject\/(.*?)\/\?from=.*?"[^<]+<img src="(.*?)\.jpg" alt="(.*?)".*?\/>[\s]+<\/a>[\s]+<\/li>/s',$buffer,$match);
+//	preg_match_all('/<li class="poster">[\s]+<a href="http:\/\/movie\.douban\.com\/subject\/(.*?)\/\?from=.*?"[^<]+<img src="(.*?)\.jpg" alt="(.*?)".*?\/>[\s]+<\/a>[\s]+<\/li>/s',$buffer,$match);	
+//  preg_match_all('/<li[\s]+id="([0-9]+)"[\s]+class="list-item"[\s]+data-title="(.*?)"/s',$buffer,$match);
+//	preg_match_all('/<img src="https:\/\/(.*?)\.jpg" alt=/s',$buffer,$match1);
+	
+//	<img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2495031914.webp" alt="龙之战" rel="nofollow" class="" />
 	
 	print_r($match);
-	print_r($match1);
+//	print_r($match1);
 	
-	return;
 	if(!empty($match[1]))
 	{
 		$sql="update page set mstatus=0 where mstatus=3;";
@@ -84,16 +85,15 @@ function nowplaying()
 				$result->country = $row['catcountry'];
 				$result->summary = $row['summary'];	
 				$result->title = $match[2][$key];
-				$result->imgurl = getimgurl($match[2][$key]);			
-				getdetail($result);		
+				$result->imgurl = getimgurl($match[2][$key]);
+				getdetail($result);
 			}
 			else
 			{					
 				echo "无记录:";							
 			}
 			$result->imgurl = getimgurl($match[2][$key]);
-			print_r($result);
-			return;
+			//print_r($result);
 			updatepage2($result,3);
 			getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
 		}	
@@ -102,7 +102,7 @@ function nowplaying()
 
 function coming()  
 { 
-	$buffer = get_file_curl('http://movie.douban.com/coming');
+	$buffer = get_file_curl('https://movie.douban.com/coming');
 	if(false===$buffer)
 	{
 		echo "抓取失败 error! </br>\n";
@@ -148,7 +148,7 @@ function coming()
 			$result->title = $match[2][$key];
 			//$result->imgurl = $match[2][$key];
 			getdetail($result);
-			print_r($result);
+			//print_r($result);
 			updatepage2($result,2);
 			getallsites($row['title'],$row['aka'],$row['cattype'],$row['updatetime'],$row['id']);
 		}		
