@@ -59,8 +59,8 @@ function readerdirect()
 			//找出对于的 title
 			$link = get_movie_url($boxofficeeach->title);
 			$boxofficeeach->link = $link;		
-			$boxofficeeach->weekmoney = $match2[1][$key2*2].$match2[2][$key2*2];						
-			$boxofficeeach->allmoney = $match2[1][$key2*2+1].$match2[2][$key2*2+1];
+			$boxofficeeach->weekmoney = $match2[1][$key2*2+1].$match2[2][$key2*2+1];
+			$boxofficeeach->allmoney = $match2[1][$key2*2].$match2[2][$key2*2];
 			print_r($boxofficeeach);
 			$outputPlace .= '<span class="list">'.$key2."</span>";			
 			$outputPlace .= '<span class="name"><a href="'.$link.'" target="_blank" >'.$boxofficeeach->title."</a></span>";
