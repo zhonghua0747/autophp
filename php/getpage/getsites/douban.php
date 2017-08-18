@@ -171,7 +171,7 @@ function getdetail(&$result)
 	
 	//得到电影图片
 	$match = array();	
-	preg_match_all('/<a href="http:\/\/movie.douban.com\/photos\/photo\/(.*?)\/"><img src="http:\/\/img3.douban.com\/view\/photo\/albumicon\/public\/.*?" alt="图片" \/><\/a>/',$buffer_2,$match);
+	preg_match_all('/<a href="http:\/\/movie.douban.com\/photos\/photo\/(.*?)\/"><img src="http:\/\/img3.doubanio.com\/view\/photo\/albumicon\/public\/.*?" alt="图片" \/><\/a>/',$buffer_2,$match);
 	//print_r($match);
 	if(!empty($match[1]))
 	{

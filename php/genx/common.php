@@ -233,9 +233,9 @@ function dh_replace_content($count,$row,$DH_output_content)
 	foreach ($celeimg_array as $key=>$celeimg_each)
 	{
 		if(empty($celeimg_each[2]))
-			$imgeach='http://img3.douban.com/pics/celebrity-default-medium.gif';
+			$imgeach='http://img3.doubanio.com/pics/celebrity-default-medium.gif';
 		else
-			$imgeach='http://img3.douban.com/img/celebrity/medium/'.$celeimg_each[2];
+			$imgeach='http://img3.doubanio.com/img/celebrity/medium/'.$celeimg_each[2];
 		$celeimg_all.=	'<li style="width:'.$width.'; height:'.$height.'"><a href="http://movie.douban.com/celebrity/'.$celeimg_each[0].'/" target="_blank" rel="nofollow"><img style="width:'.$width.'; height:'.$height.'" data-src="'.$imgeach.'" alt="'.$celeimg_each[1].'的影人图片" width="'.$width.'" height="'.$height.'"/><span class="celeimg_title">'.$celeimg_each[3].'</span></a><div class="celeimg_name">'.$celeimg_each[1].'</div></li>';
 		if($key==0)
 			$people.=$celeimg_each[1];
@@ -407,9 +407,9 @@ function dh_replace_snapshot($type='middle',$row,$DH_output_content,$needcountry
 	if($simgurl=='' || $simgurl[0]=='s')
 	{
 		if($simgurl=='')
-			$simgurlneed='http://img3.douban.com/pics/movie-default-medium.gif';
+			$simgurlneed='http://img3.doubanio.com/pics/movie-default-medium.gif';
 		else
-			$simgurlneed='http://img3.douban.com/mpic/'.$simgurl;
+			$simgurlneed='http://img3.doubanio.com/mpic/'.$simgurl;
 		$imgposter ='<a href="'.$page_path.'" target="_blank" title="'.$row['title'].'"><img style="width:'.$width.';height:'.$height.'" alt="'.$row['title'].'的海报" data-src="'.$simgurlneed.'" width="'.$width.'" height="'.$height.'"/></a>';
 	}
 	else
