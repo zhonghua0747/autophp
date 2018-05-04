@@ -1,6 +1,6 @@
 <?php
-$dbip='x2y4.com';
-#$dbip='127.0.0.1';
+#$dbip='x2y4.com';
+$dbip='210.16.187.204';
 $dbuser='root';
 $dbpasswd='qazxsw';
 $dbname='movie002';
