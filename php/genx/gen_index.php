@@ -124,7 +124,7 @@ function dh_gen_top($DH_index_cat,$DH_index_cat_each)
 	$DH_index_cat_each_ins = str_replace("%cat_each_title_more%",'',$DH_index_cat_each_ins);
 	$DH_index_cat_each_ins = str_replace("%cat_each_title_url%",'#',$DH_index_cat_each_ins);
 	
-	$toparray= array(1,0,2);
+	$toparray= array(0,1,2);
 	$liouteachs='';
 	foreach($toparray as $topkey=>$top_index)			
 	{
