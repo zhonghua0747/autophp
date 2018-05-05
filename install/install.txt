@@ -1,0 +1,26 @@
+#1、安装nginx，可以静态文件访问
+yum install nginx
+systemctl start nginx
+systemctl enable nginx.service
+#网站目录需要设置都可以访问的权限
+chmod -R 777 /www
+#关闭防火墙
+systemctl stop firewalld
+systemctl disable firewalld.service
+#关闭selinux
+getenforce 
+setenforce 0
+getenforce 
+#开机之后关闭selinux
+vi /etc/selinux/config 修改SELINUX=disabled
+
+
+#2、设置访问的目录
+见/etc/nginx/conf.d 下面的配置文件
+本目录下面有实例
+
+#3、安装php，可以动态文件访问
+yum install php
+yum install php-fpm
+systemctl start php-fpm
+systemctl enable php-fpm.service
