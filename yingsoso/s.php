@@ -436,9 +436,6 @@ if($dcount>0)
 								<input id="submittext" class="searchinput"  name="q" type="text" value="<?php echo $q ?>"/>
 								<input type="submit" class="searchsubmit" value="搜索" />
 						</form>			
-					</span>	
-          <span style="position:absolute;right:15px;top:10px">&nbsp;
-				    <div class="bdsharebuttonbox" style="position:relative;left:10px;top:-28px"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a></div>
 					</span>
 				</div>					
 			</div>
@@ -813,8 +810,6 @@ if($dcount>0)
         gettypeall();
 		startTime();
 		dhsay();
-        //百度分享
-	    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 	};
 	</script>	
   <script src="http://s95.cnzz.com/z_stat.php?id=1254506275" language="JavaScript"></script> 
