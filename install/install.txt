@@ -1,4 +1,5 @@
 #1、安装nginx，可以静态文件访问
+rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 yum install nginx
 systemctl start nginx
 systemctl enable nginx.service
@@ -22,5 +23,14 @@ vi /etc/selinux/config 修改SELINUX=disabled
 #3、安装php，可以动态文件访问
 yum install php
 yum install php-fpm
+yum install php-mysql
 systemctl start php-fpm
 systemctl enable php-fpm.service
+
+
+#4、校时准备crontab执行
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock -w
+yum install ntpdate
+ntpdate ntp.sjtu.edu.cn
+date
