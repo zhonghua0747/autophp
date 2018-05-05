@@ -1,3 +1,4 @@
 <?php
-phpinfo();
+#phpinfo();
+echo $_SERVER['DOCUMENT_ROOT'];
 ?>

@@ -1,16 +1,18 @@
 <?php
 
-$DH_output_path= '/web/x2y4/';
-$DH_input_path= '/web/php/';
-$DH_home_url= 'http://v.x2y4.com/';
-$DH_search_input_path="/web/php/share/";
-$DH_search_output_path="/web/s/";
+echo $_SERVER['DOCUMENT_ROOT']
 
-//$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x/';
-//$DH_input_path= $_SERVER['DOCUMENT_ROOT'] . '/php/';
-//$DH_home_url= 'http://127.0.0.1/x/';
-//$DH_search_input_path=$_SERVER['DOCUMENT_ROOT']."/php/share/";
-//$DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '/s/';
+//$DH_output_path= '/web/x2y4/';
+//$DH_input_path= '/web/php/';
+//$DH_home_url= 'http://v.x2y4.com/';
+//$DH_search_input_path="/web/php/share/";
+//$DH_search_output_path="/web/s/";
+
+$DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '../x2y4/';
+$DH_input_path= $_SERVER['DOCUMENT_ROOT'];
+$DH_home_url= 'http://v.x2y4.com/';
+$DH_search_input_path=$_SERVER['DOCUMENT_ROOT']."/share/";
+$DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '../s/';
 
 $DH_src_path= $DH_input_path. 'genx/';
 $DH_html_path= $DH_src_path . 'html/';
