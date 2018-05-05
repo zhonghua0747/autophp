@@ -92,7 +92,7 @@ function dh_pagenum_link($link,$page)
 //}
 
 #$dbip='movie002.com';
-$dbip='127.0.0.1';
+$dbip='210.16.187.204';
 $dbuser='root';
 $dbpasswd='qazxsw';
 $dbname='movie002';

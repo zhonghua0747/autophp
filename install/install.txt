@@ -24,6 +24,7 @@ vi /etc/selinux/config 修改SELINUX=disabled
 yum install php
 yum install php-fpm
 yum install php-mysql
+yum install php-mbstring
 systemctl start php-fpm
 systemctl enable php-fpm.service
 
