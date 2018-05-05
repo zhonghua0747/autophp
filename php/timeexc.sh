@@ -1,4 +1,4 @@
-logfile=/srv/php/log/run.log
+logfile=./log/run.log
 echo '' >> $logfile
 echo $* >> $logfile
 
