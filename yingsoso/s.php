@@ -406,7 +406,7 @@ if($dcount>0)
 		<div id="header">
 			<div id="service_list">
 				<div id="service_list_inner" class="width_1">
-					<div style="position:absolute;top:6px;left:15px;font-size:18px;font-weight:700"><a href="http://s.yingsoso.com">影搜搜(yingsoso)</a></div>
+					<div style="position:absolute;top:6px;left:15px;font-size:18px;font-weight:700"><a href="http://yingsoso.com">影搜搜(yingsoso)</a></div>
 					<div id="sub_date">
 						<script type="text/javascript">			
 							function s()  
