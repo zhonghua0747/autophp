@@ -1,8 +1,11 @@
 cd /www/web/php
 
+#只有读的第一个删除，gen的时候不删除
 logfile=./run.log
 rm -rf $logfile
 echo $(date) > $logfile
+
+
 ## 1 资源获取
 ## 1.1从rss获取的资源
 ./timeexc.sh curl 'http://127.0.0.1/php/reader/getrss.php?fid=1&lid=40' -o ./log/getrss1.log

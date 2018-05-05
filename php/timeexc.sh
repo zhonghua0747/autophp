@@ -5,7 +5,7 @@ echo $* >> $logfile
 ##抽取log文件
 NAME=$*
 LOGFILE=`echo ${NAME##*log/}`
-echo 'log file:  http://php.movie002.com/log/'$LOGFILE >> $logfile
+echo 'log file:  http://php.x2y4.com/php/log/'$LOGFILE >> $logfile
 timebegin=$(date +%s)
 echo 'begin: ' $(date) >> $logfile
 $*
