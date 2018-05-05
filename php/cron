@@ -1,11 +1,11 @@
 00 0 * * * /www/web/php/cron_reader.sh
-30 0 * * * /www/web/php/cron_genx.sh
+30 0 * * * /www/web/php/cron_genx2y4.sh
 
 00 6 * * * /www/web/php/cron_reader.sh
-30 6 * * * /www/web/php/cron_genx.sh
+30 6 * * * /www/web/php/cron_genx2y4.sh
 
 00 12 * * * /www/web/php/cron_reader.sh
-30 12 * * * /www/web/php/cron_genx.sh
+30 12 * * * /www/web/php/cron_genx2y4.sh
 
 00 18 * * * /www/web/php/cron_reader.sh
-30 18 * * * /www/web/php/cron_genx.sh
+30 18 * * * /www/web/php/cron_genx2y4.sh

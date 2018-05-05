@@ -16,7 +16,7 @@ $DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '/s/';
 $DH_search_input_path=$_SERVER['DOCUMENT_ROOT']."/php/share/";
 
 
-$DH_src_path= $DH_input_path. 'genx/';
+$DH_src_path= $DH_input_path. 'genx2y4/';
 $DH_html_path= $DH_src_path . 'html/';
 $DH_output_html_path = $DH_output_path.'html/';
 $DH_output_index_path = $DH_output_path.'index/';
