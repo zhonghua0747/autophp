@@ -1,3 +1,5 @@
+cd /www/web/php
+
 logfile=./run.log
 rm -rf $logfile
 echo $(date) > $logfile
