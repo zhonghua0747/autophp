@@ -70,9 +70,6 @@
                         %page_download%
 
 						<div class="eh4 bl2 bc_a" style="position:relative;margin:15px 0 0 0">资源列表，不断更新中 ... <span class="rt0v0 f500"> %thisupdatetime%</span></div>
-						<div style="margin:5px 0 0 0">									
-							<span>我是影视爱好者:我要<!--[<a href="javascript:showmiddle('mailsub')">邮件订阅</a>] [<a href="">RSS订阅</a>]--> [<a href="javascript:AddFavorite('《%title_key%》资源链接(在线下载等)-%DH_name%',location.href)">收藏此页</a>] || 我有资源:我要[<a href="javascript:showmiddle('srcsub')">提交资源</a>]</span>
-						</div>
 
 						%page_ticket%
 
@@ -117,88 +114,9 @@
 						</br>
 					</div>
 				</div>
-				<div id="comment" class="b1 bc_a">
-					<div class="anchor"><a name="title_c" id="title_c">&nbsp;</a></div>
-					<div class="ds-thread" data-thread-key="%id%" data-title="%title%"></div>
-				</div>
-				<div id="mailsub" class="middle_action" style="display:none;">
-					1.您的邮件地址，%DH_name%不会泄露。</br>
-					2.如果您想放弃订阅，点击邮件取消订阅的链接即可。</br></br>
-					<form action="%home%php/mailsub.php" method="POST" target="mailsubi"> 
-						邮件： <input type="text" style="width:200px" name="email">
-						<input type="submit" name="submit" value="提交">
-						<input type="hidden" name="id" value="%id%"> 
-						<a href="javascript:void(0);" onclick="hidemiddle('mailsub')">退出</a>
-					</form>
-					<iframe name="mailsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
-				</div>
-				<div id="srcsub" class="middle_action" style="display:none">
-					1.请您提交有效的资源</br>
-					2.提交之后24小时之后审查不通过会被删除</br></br>
-					<form action="%home%php/srcsub.php" method="POST" target="srcsubi">
-						资源名字： <input type="text" style="width:250px" name="title"></br>
-						链接地址： <input type="text" style="width:250px" name="link"></br>
-						来源网站： <input type="text" style="width:250px" name="author"></br>
-						资源类型： <select id="linkway" name="linkway">
-										<option value="1">影视资讯</option>
-										<option value="2">影视评论</option>
-										<option value="3">预告花絮</option>
-										<option value="4">相关活动</option>
-										<option value="5">购票链接</option>
-										<option selected value="6">下载资源</option>
-										<option value="7">在线观看</option>
-										<option value="8">影视资料</option>
-									</select>
-						资源质量：<select id="linkquality" name="linkquality">
-										<option value="1">抢先</option>
-										<option value="2">修正</option>
-										<option selected value="3">普清</option>
-										<option value="4">高清</option>
-										<option value="5">超清</option>
-										<option value="6">三维</option>
-									</select></br>			
-						获取方式： <select id="linktype" name="linktype">
-										<option value="0">未知类型</option>
-										<option selected value="1">迅雷资源</option>
-										<option value="2">FTP资源</option>
-										<option value="3">BT 资源</option>
-										<option value="4">磁力链接</option>
-										<option value="5">电驴资源</option>
-										<option value="6">网盘资源</option>
-										<option value="7">网页在线</option>
-										<option value="8">百度影音</option>
-										<option value="9">快播资源</option>
-									</select>						
-						下载渠道：<select id="linkdownway" name="linkdownway">
-										<option value="1">直接下载</option>
-										<option selected value="2">跳转下载</option>				<option value="3">需要登录</option>
-										<option value="4">未知渠道</option>
-								  </select></br>
-						更新时间： <input type="text" style="width:78px" name="updatetime">(格式:20130101  默认为今日)</br>
-						<input type="hidden" name="id" value="%id%">
-						授权号码： <input type="text" style="width:78px" name="passwd">
-						<input type="submit" name="submit" value="提交">
-						<a href="javascript:void(0);" onclick="hidemiddle('srcsub')">退出</a>
-					</form>
-					<iframe name="srcsubi" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
-				</div>
-				<div id="del" class="middle_action" style="display:none">
-					1.提交资源删除请求需要删除码</br>
-					2.如果是自己提交的资源，删除码为提交码</br>
-					3.其他情况，请联系管理员获取删除码</br></br>
-					<form action="%home%php/srcdel.php" method="POST" target="deli"> 
-						链接名称： <div id="deltitle"></div></br>
-						链接地址： <div id="delurl" class="overflow"></div></br>
-						权限密码： <input type="text" style="width:100px;height:20px" name="passwd">
-						<input type="submit" name="submit" value="提交">
-						<input type="hidden" name="pageid" value="%id%">
-						<input type="hidden" name="delurl" id="delurlinput" value="">
-						<a href="javascript:void(0);" onclick="hidemiddle('del')">退出</a>
-					</form>
-					<iframe name="deli" allowtransparency="true" frameBorder="0" scrolling="no" height="25px" width="350px" src="about:blank"></iframe>
-				</div>
+				
 				<div id="notify" class="middle_action" style="display:none">
-					1.如遇到侵权行为，请发邮件到a@movie002.com</br>
+					1.如遇到侵权行为，请发邮件到a@x2y4.com</br>
 					2.邮件中附带相关权利证明和相关证明材料</br>
 					3.管理员审核通过之后会发送删除码</br>
 					4.利用删除码点击日期可删除侵权链接 
@@ -220,7 +138,6 @@
 	<script type="text/javascript">
 	%footjs%
 	%page.js%
-	var duoshuoQuery = {short_name:"x2y4"};
 	</script>
 </body>
 </html>
