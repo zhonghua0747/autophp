@@ -50,6 +50,8 @@ yum install mysql-server
 #把备份的数据库文件拷贝到
 cd /var/lib/mysql/data
 tar -xvf mysqldata.tar
+chmod 777 data
+chmod -R 777 movie002
 systemctl start mysql
 
 mysql -uroot -p
