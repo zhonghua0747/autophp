@@ -4,8 +4,8 @@ ini_set('display_startup_errors',1);    //php启动错误信息
 error_reporting(-1);                    //打印出所有的 错误信息  
 ini_set('error_log', dirname(__FILE__) . '/error_log.txt'); //将出错信息输出到一个文本文件  
 
-#$dbip='x2y4.com';
-$dbip='210.16.187.204';
+$dbip='x2y4.com';
+#$dbip='210.16.187.204';
 $dbuser='root';
 $dbpasswd='qazxsw';
 $dbname='movie002';
