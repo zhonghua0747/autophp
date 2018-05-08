@@ -1,6 +1,10 @@
 #1、安装nginx，可以静态文件访问
 rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 yum install nginx
+#设置访问的目录
+见/etc/nginx/conf.d 下面的配置文件
+本目录下面有实例
+#启动和开机启动
 systemctl start nginx
 systemctl enable nginx.service
 #网站目录需要设置都可以访问的权限
@@ -14,13 +18,16 @@ setenforce 0
 getenforce 
 #开机之后关闭selinux
 vi /etc/selinux/config 修改SELINUX=disabled
+#安装svn,拉取代码
+yum install svn
+cd /www/
+svn checkout https://github.com/zhonghua0747/autophp/trunk
+#拷贝原来的文件
+cp /web/x2y4/html index
 
 
-#2、设置访问的目录
-见/etc/nginx/conf.d 下面的配置文件
-本目录下面有实例
 
-#3、安装php，可以动态文件访问
+#2、安装php，可以动态文件访问
 yum install php
 yum install php-fpm
 yum install php-mysql
@@ -28,10 +35,25 @@ yum install php-mbstring
 systemctl start php-fpm
 systemctl enable php-fpm.service
 
-
-#4、校时准备crontab执行
+#3、校时准备crontab执行
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock -w
 yum install ntpdate
 ntpdate ntp.sjtu.edu.cn
 date
+
+#4、安装mysql
+yum install wget
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum install mysql-server
+#把备份的数据库文件拷贝到
+cd /var/lib/mysql/data
+tar -xvf mysqldata.tar
+systemctl start mysql
+
+mysql -uroot -p
+mysql>use mysql
+mysql>update user set password=password('root') where user='root' and host='localhost';
+mysql>flush privileges;
+mysql>GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
