@@ -53,6 +53,7 @@
 						{
 							$DH_input_html  = '/www/web/php/genx2y4/html/list_each.html';
 							$DH_home_url= 'http://v.x2y4.com/';	
+							$DH_html_url= $DH_home_url.'html/';
 							
 							require("../php/genx2y4/common.php");
 							require("../php/common/base.php");
@@ -66,7 +67,7 @@
 
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							
-              $beginnum=($p-1)*$pagenum;
+							$beginnum=($p-1)*$pagenum;
 							$sql="select * from page where title like '%$q%' or aka like '%$q%' order by updatetime desc  limit $beginnum , $pagenum";
 							$sqlcount="select count(*) from page where title like '%$q%' or aka like '%$q%'";
 							
