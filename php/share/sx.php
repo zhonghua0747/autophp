@@ -1,8 +1,4 @@
 <?php
-
-	$DH_input_html  = '/www/web/php/genx2y4/html/list_each.html';
-	$DH_home_url= 'http://v.x2y4.com/';
-
 	//require_once('360safe/360webscan.php'); // 注意文件路径
 	//if(is_file('360safe/360webscan.php'))
 	//{
@@ -55,6 +51,9 @@
 						}
 						else
 						{
+							$DH_input_html  = '/www/web/php/genx2y4/html/list_each.html';
+							$DH_home_url= 'http://v.x2y4.com/';	
+							
 							require("../php/genx2y4/common.php");
 							require("../php/common/base.php");
 							require("../php/common/dbaction.php");
@@ -90,19 +89,20 @@
 								}
 							}
               
-						  $results=dh_mysql_query($sqlcount);
+							$results=dh_mysql_query($sqlcount);
 							$counts = mysql_fetch_array($results);
 							$count = $counts[0];
 
-              $DH_search_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?q='.$_GET['q'].'&p=';
-              $pages=ceil($count/$pagenum);
-              $pagenavi = dh_pagenavi(5,$pages,$DH_search_url,$p);
-              echo '<div class="page_navi">'.$pagenavi.'</div>';
+							$DH_search_url="http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?q='.$_GET['q'].'&p=';
+							$pages=ceil($count/$pagenum);
+							$pagenavi = dh_pagenavi(5,$pages,$DH_search_url,$p);
+							echo '<div class="page_navi">'.$pagenavi.'</div>';
 							mysql_close($conn);
 							if($count==0)
-								echo "</br>".'  <div style="text-align:center">好像没有相关资源哦！请更换关键词重新搜索，或者耐心等待，只要不断关注电影小二网，就会第一时间得到资源，您不会失望哦！</div>'."</br>";
-
-								echo '';
+							{
+								echo "</br>".'  <div style="text-align:center">好像没有相关资源哦！请更换关键词重新搜索，或者耐心等待，只要不断关注小二影视网，就会第一时间得到资源，您不会失望哦！</div>'."</br>";
+							}
+							echo '';
 						}
 					?>
 				</ul>
