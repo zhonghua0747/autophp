@@ -1,25 +1,30 @@
 <?php
+
+	$DH_input_html  = '/www/web/php/genx2y4/html/list_each.html';
+	$DH_home_url= 'http://v.x2y4.com/';
+
 	//require_once('360safe/360webscan.php'); // 注意文件路径
 	//if(is_file('360safe/360webscan.php'))
 	//{
 	//	require_once('360safe/360webscan.php');
 	//}
-  $pagenum = 10;
+	$pagenum = 10;
 	$q='';
 	$p=1;
 	if( isset($_GET['q']))
 	{
 		$q = htmlspecialchars($_GET['q']);
 	}
- if( isset($_GET['p']))
- {
-   	$p = $_GET['p'];
- }	
 
- function dh_pagenum_link($link,$page)
- {
- 	return $link.$page;
- }
+	if( isset($_GET['p']))
+	{
+		$p = $_GET['p'];
+	}	
+
+	function dh_pagenum_link($link,$page)
+	{
+		return $link.$page;
+	}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -54,13 +59,12 @@
 							require("../php/common/base.php");
 							require("../php/common/dbaction.php");
 							require("../php/config.php");
-							require("../php/genx2y4/config.php");
 							require("../php/common/page_navi.php");
 							$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 							mysql_select_db($dbname, $conn) or die('选择数据库失败');
 							mysql_query("set names utf8;");
 							
-							$DH_input_html  = $DH_html_path . 'list_each.html';
+
 							$DH_output_content = dh_file_get_contents("$DH_input_html");
 							
               $beginnum=($p-1)*$pagenum;
