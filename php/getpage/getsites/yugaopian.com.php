@@ -21,7 +21,7 @@ function get_yugaopian($title,$aka,$type,$updatetime,$pageid=-1)
 		return;
 	echo " \n begin to get from yugaopian:\n";	
 	$name = rawurlencode($title);
-	$url='http://www.yugaopian.com/?view=search&keyword='.$name;
+	$url='http://www.yugaopian.cn/?view=search&keyword='.$name;
 	echo $url."\n";	
 	$buffer = get_file_curl($url);
 	//echo $buffer;
@@ -59,7 +59,7 @@ function get_yugaopian($title,$aka,$type,$updatetime,$pageid=-1)
 			continue;
 		$ytitle ="《".$title."》".$xtitle;
 		$updatetime = date("Y-m-d H:i:s");
-		$url='http://www.yugaopian.com/movie/'.$match0[1][$key];	
+		$url='http://www.yugaopian.cn/movie/'.$match0[1][$key];	
         //echo   $ytitle."-->".$url."-->".$updatetime;
 		addorupdatelink($pageid,'预告片世界',$ytitle,$url,'',4,3,7,0,0,$updatetime,1);
 	}
