@@ -12,7 +12,7 @@ echo $_SERVER['DOCUMENT_ROOT'];
 $DH_output_path= $_SERVER['DOCUMENT_ROOT'] . '/x2y4/';
 $DH_input_path= $_SERVER['DOCUMENT_ROOT'].'/php/';
 $DH_home_url= 'http://v.x2y4.com/';
-$DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '/s/';
+$DH_search_output_path=$_SERVER['DOCUMENT_ROOT'] . '/yingsoso/';
 $DH_search_input_path=$_SERVER['DOCUMENT_ROOT']."/php/share/";
 
 
