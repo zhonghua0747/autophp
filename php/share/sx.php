@@ -50,11 +50,11 @@
 						}
 						else
 						{
-							require("../php/genv/common.php");
+							require("../php/genx2y4/common.php");
 							require("../php/common/base.php");
 							require("../php/common/dbaction.php");
 							require("../php/config.php");
-							require("../php/genv/config.php");
+							require("../php/genx2y4/config.php");
 							require("../php/common/page_navi.php");
 							$conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接失败：'.mysql_error());
 							mysql_select_db($dbname, $conn) or die('选择数据库失败');
